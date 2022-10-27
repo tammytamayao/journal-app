@@ -1,0 +1,47 @@
+<%= render "categories/header" %> 
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+
+<div class="devise-list-container">
+<div class="devise-form-container">
+<div class="devise-form">
+
+<span class="devise-form-title">LOG IN</span>
+<hr/>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <span>
+    <%= f.label :email, class: "devise-form-label" %><br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form-input" %>
+    </span>
+  </div>
+
+  <div class="field">
+    <span>
+    <%= f.label :password, class: "devise-form-label" %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "devise-form-input" %>
+    </span>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <span>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, class: "devise-form-label" %>
+      </span>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <span><%= f.submit "Log in", class: "submit-btn" %><span>
+  </div>
+<% end %>
+
+<br/><span><%= render "devise/shared/links" %> </span>
+
+</div>
+</div>
+</div>
+

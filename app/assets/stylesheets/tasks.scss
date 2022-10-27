@@ -1,0 +1,157 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// new.html.erb & edit.html.erb
+
+.task-form-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+  
+.task-form {
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px 20px;
+    height: 86%;
+    border: 15px solid #449342;
+    border-radius: 10px;
+    width: 375px;
+    background-color: white;
+}
+
+.task-container {
+    background-color: rgb(77, 77, 77);
+    padding: 5px;
+    height: 100vh;
+}
+
+.task-form-title {
+    font-size: 24pt;
+    font-family: 'Oswald';
+}
+
+.task-form-label {
+    font-size: 12pt;
+    font-family: 'Oswald';
+}
+
+.task-form-input {
+    width: 98%;
+    height: 25px;
+    font-size: 12pt;
+    font-family: Arial;
+    
+}
+
+textarea {
+    width: 98%;
+    font-size: 12pt;
+    font-family: Arial;
+}
+
+.checkbox-container {
+    padding: 5px 0px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    padding: 15px 10px 0px 10px;
+
+}
+
+.submit-btn {
+    width: 200px;
+    height: 30px;
+    font-size: 12pt;
+    background-color: rgb(197, 248, 197);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:hover {
+    background-color:#449342;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+//show.html.erb
+
+.task-title {
+    font-size: 30pt;
+    font-family: 'Oswald';
+    color: black;
+    text-decoration: none;
+}
+
+.task-title-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.task-subtitle-container-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-left:20px;
+}
+
+.tasks-body-container {
+    padding: 10px 20px;
+}
+
+.task-body-list-container {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(77, 77, 77);
+}
+
+.task-body-container {
+    padding:10px;
+    border-radius: 5px;
+    background-color: rgb(197, 248, 197);
+}
+
+.task-body {
+    list-style-type: none;
+    font-size: 14pt;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.task-body-header {
+    font-size: 18pt;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.task-body-header-container {
+    padding-bottom: 5px;
+}
+
+.task-deadline, .task-incomplete,.task-complete {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18pt;
+}
+
+.task-incomplete-container {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: red
+}
+
+.task-complete-container {
+    padding: 15px;
+    border: 1px solid green;
+    border-radius: 10px;
+    background-color: green;
+}

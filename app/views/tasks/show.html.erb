@@ -1,0 +1,45 @@
+<%= render "categories/header" %>
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+
+<div class="task-title-container"><span class="task-title"><%= link_to @task.category.title.upcase, category_path(@category), class:"task-title" %> > <%= @task.title %></span></div>
+
+<div class="task-subtitle-container-container">
+    <span class="task-subtitle-container">
+        <span><%= link_to "EDIT", edit_category_task_path(@category, @task), class: "task-subtitle" %></span>
+        <span><%= link_to 'DELETE', [@task.category, @task], method: :delete, data: { confirm: "Are you sure?" }, class: "task-subtitle" %></span>
+    </span>
+</div>
+
+<div class="tasks-body-container">
+<div class="task-body-list-container">
+
+<div class="task-body-header-container"><span class="task-body-header">NOTES:</span><br/></div>
+<div class="task-body-container"><span class="task-body"><strong><%= @task.body %></strong></span></div>
+
+</div>
+</div>
+
+<% if @task.completed? %>
+
+<div class="tasks-body-container">
+<div class="task-complete-container">
+<span class="task-complete"><strong> COMPLETED!</strong></span>
+</div>
+</div>
+
+<% else %>
+
+<div class="tasks-body-container">
+<div class="task-body-list-container">
+<span class="task-deadline"><strong>Deadline: <%= @task.deadline.to_formatted_s :rfc822 %></strong></span>
+</div>
+</div>
+
+<div class="tasks-body-container">
+<div class="task-incomplete-container">
+<span class="task-incomplete"><strong> NOT COMPLETED YET!</strong></span>
+</div>
+</div>
+<% end %>

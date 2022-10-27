@@ -1,0 +1,341 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//import fonts
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Mina&family=Open+Sans:wght@400;600&family=Oswald:wght@500&family=Poppins:wght@200&family=Prompt:wght@200&family=Space+Grotesk:wght@300;400&display=swap');
+
+//_header.html.erb
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    width: 100%;
+    height: 40px;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Oswald';
+    color:white;
+    background-color: #449342
+  }
+
+.header-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+
+.header-ul li {
+    list-style: none;
+    padding: 8px;
+}
+
+.header-ul li:hover {
+    list-style: none;
+    padding: 8px;
+}
+
+.header-title {
+    font-size: 20pt;
+    padding: 0px 15px;
+}
+
+.header-link, .home-link {
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    padding: 5px;
+}
+
+.header-link:hover {
+    color: black;
+    transition: 0.1s;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+//registration & session form
+// edit.html.erb & new.html.erb (categories)
+
+.devise-body {
+    height: 100vh;
+}
+
+.devise-list-container {
+    background-color: rgb(77, 77, 77);
+    height: 100vh;
+}
+
+.devise-delete-container {
+    display: flex;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.devise-form-container, .category-form-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-right: 10px;
+    
+}
+  
+.devise-form, .category-form {
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px 20px;
+    height: 86%;
+    border: 15px solid #449342;
+    border-radius: 10px;
+    width: 375px;
+    background-color: white;
+}
+
+.devise-form-title, .category-form-title {
+    font-size: 24pt;
+    font-family: 'Oswald';
+}
+
+.devise-form-label, .category-form-label {
+    font-size: 12pt;
+    font-family: 'Oswald';
+}
+
+.devise-form-input, .category-form-input {
+    width: 98%;
+    height: 25px;
+    font-size: 12pt;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.submit-btn {
+    width: 200px;
+    height: 30px;
+    font-size: 12pt;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:hover {
+    background-color:#449342;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.devise-shared-link {
+    font-family: 'Oswald';
+    color:#449342;
+}
+.devise-link-container {
+    padding: 2px;
+}
+
+//index.html.erb
+
+.category-title {
+    font-size: 30pt;
+    font-family: 'Oswald';
+}
+
+.category-title-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.category-list-container {
+    background-color: rgb(77, 77, 77);
+    padding: 5px;
+    height: 100vh;
+}
+
+.category-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+}
+
+.category-li {
+    list-style-type: none;
+    width: 282px;
+    padding: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.category-li-content-container {
+    padding: 25px;
+    background-color: rgb(197, 248, 197);
+    border-radius: 10px;
+    height: 180px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.category-subtitle {
+    text-decoration: none;
+    color: black;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.category-subheader {
+    font-size: 13pt;
+}
+
+.category-submenu-container {
+    padding: 10px 0px;
+}
+
+.category-submenu {
+    display: flex;
+    justify-content: space-around;
+    padding: 7px;
+    background-color: rgb(77, 77, 77);
+    border-radius: 10px;
+}
+
+.category-submenu-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14pt;
+    color: white;
+}
+
+.category-add-btn {
+    text-decoration: none;
+    font-size: 52pt;
+}
+
+.category-add-btn-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+//show.html.erb & _task.html.erb
+
+.task-header {
+    font-size: 18pt;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.category-title-container {
+    padding-bottom: 10px;
+}
+
+.category-subtitle-container {
+    display: flex;
+    justify-content: center;
+}
+
+.task-subtitle-container {
+    width: 25%;
+    background-color: rgb(77, 77, 77);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+.task-subtitle {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+    color: white;
+}
+
+.tasks-container {
+    padding: 20px;
+}
+
+.task-list-container {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(77, 77, 77);
+}
+
+.task-ul {
+    padding:10px;
+    border-radius: 5px;
+    background-color: rgb(197, 248, 197);
+}
+
+.task-li {
+    list-style-type: none;
+    font-size: 14pt;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-link-complete {
+    text-decoration: none;
+    color: rgb(127, 127, 127);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.task-link {
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.task-delete-btn {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.delete-btn {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+//notice & alerts
+
+.error-ul {
+    padding: 0;
+    margin: 0;
+}
+
+.alert-info, .alert-warning, .error-ul {
+    padding: 8px 25px;
+    border: 1px solid rgb(197, 248, 197);
+    border-radius: 3px;
+    background-color: rgb(197, 248, 197);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+#notice-id, #alert-id, #error-li {
+    list-style-type: none;
+    font-family: sans-serif;
+    font-size: 18pt;
+}
+
+.error-msg {
+    font-family: sans-serif;
+    font-size: 10pt;
+    color: red;
+}

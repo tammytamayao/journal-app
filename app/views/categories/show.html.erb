@@ -1,0 +1,19 @@
+<%= render "header" %>
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+
+<div class="category-title-container">
+    <span class="category-title"><%= @category.title.upcase %></span>
+</div>
+<div class="category-subtitle-container">
+    <span class="task-subtitle-container">
+    <span><%= link_to "ADD", new_category_task_path(@category, @task), class: "task-subtitle" %> </span>
+    <span><%= link_to "BACK", root_path, class: "task-subtitle" %></span>
+    </span>
+</div>
+
+
+<span class="tasks-container"><%= render "task" %></span>
+
+

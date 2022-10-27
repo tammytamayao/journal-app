@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+
+<div class="header-container">
+  <div><span class="header-title"><%= link_to "TrackerIO", root_path, class: "home-link" %></span></div>
+  <ul class="header-ul">
+    <li><%= link_to "Tasks", tasks_path, class: "header-link" %></li>
+    <li><%= link_to "Edit Profile", edit_user_registration_path, class: "header-link" %></li>
+    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "header-link" %></li>
+  </ul>
+</div>
+
+<% else %>
+
+<div class="header-container">
+  <div><span class="header-title">TrackerIO</span></div>
+  <ul class="header-ul">
+    <li><%= link_to "Sign Up", new_user_registration_path, class: "header-link" %></li>
+    <li><%= link_to "Log In", new_user_session_path, class: "header-link" %></li>
+  </ul>
+</div>
+
+<% end %>

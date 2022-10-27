@@ -1,0 +1,41 @@
+<%= render "header" %>
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+
+<div class="category-title-container"><span class="category-title">MY CATEGORIES</span></div>
+<div class="category-list-container">
+<% if user_signed_in? %>
+  <ul class="category-ul">
+    <% @categories.each do |category| %>
+      <li class="category-li">
+        <div class="category-li-content-container">
+          <span><%= link_to category.title, category, class: "category-subtitle" %><span><br/>
+          <div class="category-submenu-container">
+          <span class="category-subheader">Total: <%= category.tasks.count  %> tasks</span><br/>
+          <span class="category-subheader">Date Created: <%= category.created_at.strftime("%Y %b %d")  %></span><br/>
+          <span class="category-subheader">Last Updated: <%= category.updated_at.strftime(" %Y %b %d")  %></span><br/>
+          </div>
+          <div class="category-submenu-container">
+          <div class="category-submenu">
+            <span><%= link_to "Edit", edit_category_path(category), class: "category-submenu-label" %></span>
+            <span><%= link_to "Delete", category_path(category), method: :delete,  data: { confirm: "Are you sure?" }, class: "category-submenu-label"  %></span>
+          </div>
+          </div>
+        </div>    
+      </li>
+    <% end %>
+    <li class="category-li">
+      <div class="category-li-content-container">
+      <span class="category-add-btn-container"><%= link_to "+", new_category_path, class: "category-add-btn"%></span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<% else %>
+<div>
+  <span><%= link_to "Sign Up", new_user_registration_path %></span><br/>
+  <span><%= link_to "Log In", new_user_session_path %></span>
+</div>
+<% end %>

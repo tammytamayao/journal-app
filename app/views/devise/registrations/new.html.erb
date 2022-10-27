@@ -1,0 +1,43 @@
+<%= render "categories/header" %>
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="devise-list-container">
+<div class="devise-form-container">
+<div class="devise-form">
+
+<span class="devise-form-title">SIGN UP</span>
+<hr/>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email, class: "devise-form-label" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "devise-form-label" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "devise-form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "devise-form-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-form-input"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "submit-btn" %>
+  </div>
+<% end %>
+
+
+<br/><span><%= render "devise/shared/links" %> </span>
+
+</div>
+</div>
+</div>

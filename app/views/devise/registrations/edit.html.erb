@@ -1,0 +1,63 @@
+<%= render "categories/header" %>
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="devise-list-container">
+<div class="devise-form-container">
+<div class="devise-form">
+
+<span class="devise-form-title">EDIT USER</span>
+<hr/>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+  <div class="field">
+    <%= f.label :email, class: "devise-form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form-input" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password, class: "devise-form-label" %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "devise-form-input" %>
+    <% if @minimum_password_length %>
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "devise-form-label" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-form-input"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password, class: "devise-form-label" %><br/><i>(type current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "devise-form-input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", class: "submit-btn"%>
+  </div>
+<% end %>
+
+</div>
+</div>
+</div>
+
+<div class="devise-list-container">
+<div class="devise-delete-container">
+<div class="devise-form">
+<span class="devise-form-title">Unhappy?</span>
+<hr/>
+<div class="actions">
+<%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "submit-btn" %>
+</div>
+
+</div>
+</div>
+</div>

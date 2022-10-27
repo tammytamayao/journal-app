@@ -1,0 +1,27 @@
+<%=render "categories/header" %>
+
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="devise-list-container">
+<div class="devise-form-container">
+<div class="devise-form">
+
+<span class="devise-form-title">FORGOT PASSWORD</span>
+<hr/>
+
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+  <div class="field">
+    <%= f.label :email, class: "devise-form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form-input"%>
+  </div>
+
+  <div class="actions"><%= f.submit "Reset Password", class: "submit-btn" %></div>
+<% end %>
+
+</div>
+</div>
+</div>

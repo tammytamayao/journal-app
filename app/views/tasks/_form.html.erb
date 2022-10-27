@@ -1,0 +1,34 @@
+<%= form_with model: [@category, @task] do |form| %>
+
+  <div>
+    <%= form.label "Task", class: "task-form-label" %><br>
+    <%= form.text_field :title, class: "task-form-input" %>
+      <% @task.errors.full_messages_for(:title).each do |message| %>
+        <div class="error-msg"><%= message %></div>
+      <% end %>
+  </div>
+
+  <div>
+    <%= form.label "Notes", class: "task-form-label" %><br>
+    <%= form.text_area :body, :rows => 6 %>
+  </div>
+  
+  <div>
+    <%= form.label :deadline, class: "task-form-label" %>
+    <%= form.date_field :deadline, class: "task-form-input" %>
+      <% @task.errors.full_messages_for(:deadline).each do |message| %>
+        <div class="error-msg"><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="checkbox-container">
+    <%= form.check_box :completed %>
+    <%= form.label "Completed ?", class: "task-form-label" %>
+  </div>
+
+  <div class="actions">
+    <span><%= form.submit "Submit", class: "submit-btn" %></span>
+  </div>
+
+<% end %>
+

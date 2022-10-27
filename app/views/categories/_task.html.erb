@@ -1,0 +1,36 @@
+<div class="tasks-container">
+<div class="task-list-container">
+<div><span class="task-header">NOT COMPLETED</span><br/></div>
+
+<% @tasks.each do |task| %>
+  <% if !task.completed? %>
+  <ul class="task-ul">
+    <li class="task-li">
+      <span><strong><%= link_to task.title, [task.category,task], class: "task-link" %></strong></span>
+      <span>
+        <span class="task-delete-btn"><%= link_to 'X', [task.category,task], method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %></span>
+      </span>
+    </li>
+  </ul>
+  <% end %>
+<% end %>
+</div>
+</div>
+
+<div class="tasks-container">
+<div class="task-list-container">
+<div><span class="task-header">COMPLETED</span><br/></div>
+<% @tasks.each do |task| %>
+  <% if task.completed? %>
+  <ul class="task-ul">
+    <li class="task-li">
+      <span style="text-decoration:line-through"><strong><%= link_to task.title, [task.category,task], class: "task-link-complete" %></strong></span>
+      <span>
+        <span class="task-delete-btn"><%= link_to 'X', [task.category,task], method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %></span>
+      </span>
+    </li>
+  </ul>
+  <% end %>
+<% end %>
+</div>
+</div>
