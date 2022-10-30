@@ -1,0 +1,8 @@
+<ul class="task-ul">
+    <li class="task-li">
+      <span><strong><%= link_to task.title, [task.category,task], class: "task-link" %></strong></span>
+      <span>
+        <span class="task-delete-btn"><%= link_to 'X', [task.category,task], method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %></span>
+      </span>
+    </li>
+  </ul>
