@@ -9,3 +9,6 @@ one:
 
 two:
   email: princess@gmail.com
+
+empty:
+  email: nil
