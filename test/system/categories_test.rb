@@ -5,13 +5,18 @@ class CategoriesTest < ApplicationSystemTestCase
 
     def setup
         sign_in users(:one)
-        #@category = categories(:one)
+        @category = categories(:one)
+    end
+
+    test "Show Category" do
+        visit categories_url
+        assert_selector "span", text: @category.title
     end
 
     test "Create Category" do
         visit categories_url
         click_on "+"
-        fill_in "category[title]", with: "New"
+        fill_in "category[title]", with: @category.title
         click_on "Submit"
         assert_text "Category was successfully added."
     end
@@ -19,7 +24,7 @@ class CategoriesTest < ApplicationSystemTestCase
     test "Update Category" do
         visit categories_url
         click_on "Edit"
-        fill_in "category[title]", with: "Edited"
+        fill_in "category[title]", with: @category.title
         click_on "Submit"
         assert_text "Category was successfully updated."
     end

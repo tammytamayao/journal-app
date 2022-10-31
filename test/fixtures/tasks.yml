@@ -1,13 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  #user_id: 1
-  category_id: 17
+  user_id: 1
+  category: one
   title: MyString
   body: MyText
+  deadline: "2022-10-31"
+  completed: true
 
 two:
-  #user_id: 3
-  category_id: 18
+  user_id: 2
+  category: two
   title: MyString
   body: MyText
+  deadline: "2022-11-01"
+  completed: false
