@@ -1,4 +1,6 @@
 <%= render "categories/header" %>
+<% if notice %><div class="alert alert-info"><span id="notice-id"><%= notice%></span></div><% end %>
+<% if alert %><div class="alert alert-warning"><span id="alert-id"><%= alert%></span></div><% end %>
 <div class="category-title-container">
     <span class="category-title">ALL TASKS</span>
 </div>

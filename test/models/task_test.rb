@@ -21,7 +21,7 @@ class TaskTest < ActiveSupport::TestCase
     task = @category.tasks.build
     task.title = @task.title
     
-    assert_not task.save, "Error: TASK SAVED WITHOUT TITLE"
+    assert_not task.save, "Error: TASK SAVED WITHOUT DEADLINE"
   end
 
   test "Task Validation (CATEGORY_ID & USER ID NOT NULL)" do

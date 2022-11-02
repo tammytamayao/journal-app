@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   test "USER SIGNUP/LOGIN INFO (NOT NULL)" do
     user = users(:empty)
 
-    assert user.save, "Error: EMAIL OR PASSWORD IS BLANK"
+    assert user.save, "Error: USER LOGGED IN/SIGNED UP WHERE EMAIL OR PASSWORD IS BLANK"
   end
 
 end

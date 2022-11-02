@@ -34,7 +34,7 @@ class TasksTest < ApplicationSystemTestCase
       fill_in "task[body]", with: @task.body
       fill_in "task[deadline]", with: @task.deadline
       click_on "Submit"
-      #assert_text "Task was successfully updated."
+      assert_selector "span", text: "EDIT TASK"
   end
 
   test "Delete Task" do
