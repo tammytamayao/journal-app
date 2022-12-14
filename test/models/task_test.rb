@@ -13,7 +13,7 @@ class TaskTest < ActiveSupport::TestCase
     task = @category.tasks.build
     task.deadline = @task.deadline
     
-    assert_not task.save, "Error: TASK SAVED WITHOUT TITLE"
+    assert_not task.save, "TASK SAVED WITHOUT TITLE"
   end
 
   test "Task Validation (DEADLINE NOT NULL)" do
@@ -21,7 +21,7 @@ class TaskTest < ActiveSupport::TestCase
     task = @category.tasks.build
     task.title = @task.title
     
-    assert_not task.save, "Error: TASK SAVED WITHOUT DEADLINE"
+    assert_not task.save, "TASK SAVED WITHOUT DEADLINE"
   end
 
   test "Task Validation (CATEGORY_ID & USER ID NOT NULL)" do
@@ -30,7 +30,7 @@ class TaskTest < ActiveSupport::TestCase
     task.body= @task.body
     task.deadline = @task.deadline
     
-    assert_not task.save, "Error: TASK SAVED WITHOUT CATEGORY_ID & USER_ID"
+    assert_not task.save, "TASK SAVED WITHOUT CATEGORY_ID & USER_ID"
   end
 
 end

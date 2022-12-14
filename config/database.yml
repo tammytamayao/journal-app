@@ -16,24 +16,20 @@
 #
 default: &default
   adapter: postgresql
- # encoding: unicode
+  encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: containers-us-west-17.railway.app
-  username: postgres
-  password: Hc7l3wwaAhW7i5eLx56R
-  port: 6728
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: railway
+  database: watch_app_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: watch_app
+  #username: blog_sample
 
   # The password associated with the postgres role (username).
   #password:
@@ -85,5 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: railway
-
+  database: watch_app_production
+  username: watch_app
+  password: <%= ENV['watch_app_DATABASE_PASSWORD'] %>

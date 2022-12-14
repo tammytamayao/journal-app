@@ -8,7 +8,7 @@ class CategoriesTest < ApplicationSystemTestCase
         @category = categories(:one)
     end
 
-    test "Show Category" do
+    test "View Category" do
         visit categories_url
         assert_selector "span", text: @category.title
     end
@@ -18,7 +18,7 @@ class CategoriesTest < ApplicationSystemTestCase
         click_on "+"
         fill_in "category[title]", with: @category.title
         click_on "Submit"
-        assert_text "Category was successfully added."
+        assert_selector "span", text: "NEW CATEGORY"
     end
 
     test "Update Category" do

@@ -9,7 +9,7 @@ class TasksTest < ApplicationSystemTestCase
       @task = tasks(:one)
   end
 
-  test "Show Task" do
+  test "View Task" do
       visit tasks_url(@task)
       assert_selector "span", text: "ALL TASKS"
   end
